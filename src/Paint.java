@@ -36,6 +36,10 @@ public class Paint extends JFrame implements ActionListener {
 	private MenuItem Select_All = new MenuItem();
 	private MenuItem Copy_to = new MenuItem();
 	private MenuItem Paste_From = new MenuItem();
+	private Menu View= new Menu();
+	private MenuItem ToolBox=new MenuItem();
+	private MenuItem ColorBox=new MenuItem();
+	private MenuItem OptionBox=new MenuItem();
 
 	public Paint() {
 
@@ -177,6 +181,20 @@ public class Paint extends JFrame implements ActionListener {
 		this.Paste_From.setShortcut(new MenuShortcut(KeyEvent.VK_F4, false));
 
 		this.Paste_From.addActionListener(this);
+		this.menuBar.add(this.View); 
+		this.View.setLabel("View");
+		this.View.add(this.ToolBox);
+		this.ToolBox.setLabel("ToolBox");
+        this.ToolBox.addActionListener(this);
+        
+		this.View.add(this.ColorBox);
+		this.ColorBox.setLabel("ColorBox");
+        this.ColorBox.addActionListener(this);
+        this.View.add(this.OptionBox);
+		this.OptionBox.setLabel("OptionBox");
+        this.OptionBox.addActionListener(this);
+		
+		
 	}
 	
 		     public static void main(String args[]) {

@@ -7,11 +7,7 @@ import java.io.*;
 
 public class Paint extends JFrame implements ActionListener {
 
-	
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private MenuBar menuBar = new MenuBar(); 
@@ -177,13 +173,20 @@ public class Paint extends JFrame implements ActionListener {
 		this.Paste_From.setShortcut(new MenuShortcut(KeyEvent.VK_F4, false));
 
 		this.Paste_From.addActionListener(this);
+		
+		
+		
+		
+		
 	}
 	
 		     public static void main(String args[]) {
 		
 		         Paint app = new Paint();
-		
-		         app.setVisible(true);
+		         
+		        app.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+		 		app.setSize( 800, 600 );
+		        app.setVisible(true);
 	}
 
 			@Override

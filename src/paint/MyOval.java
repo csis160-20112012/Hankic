@@ -8,10 +8,15 @@ package paint;
 import java.awt.Graphics;
 
 public class MyOval {
+	
+	int x;
+	int y;
+	int h;
+	int w;
 
 	public void paint(Graphics g) {
 
-		g.drawOval(350, 350, 150, 150);
+	g.drawOval(x, y, h, w);
 
 	}
 }

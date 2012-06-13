@@ -9,12 +9,18 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class RoundRect {
+	
+	int x;
+	int y;
+	int h;
+	int w;
+	int r;
 
 	public void paint(Graphics graphics) {
 		graphics.setColor(Color.pink);
-		graphics.fillRoundRect(400, 400, 100, 100, 5, 5);
+		graphics.fillRoundRect(x, y, h, w, r, r);
 		graphics.setColor(Color.red);
-		graphics.drawRoundRect(400, 400, 100, 100, 5, 5);
+		graphics.drawRoundRect(x, y, h, w, r, r);
 	}
 
 }

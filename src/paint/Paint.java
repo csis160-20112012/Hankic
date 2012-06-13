@@ -11,7 +11,7 @@ import javax.swing.*;
  */
 
 public class Paint extends JFrame implements MouseListener,
-		MouseMotionListener, ActionListener
+MouseMotionListener, ActionListener
 
 {
 
@@ -24,13 +24,13 @@ public class Paint extends JFrame implements MouseListener,
 	int xpos = -10;
 
 	int ypos = -10;
-	
+
 	int coordinatesx;
-	
+
 	int coordinatesy;
-	
+
 	int valuex;
-	
+
 	int valuey;
 
 	Container con = null;
@@ -39,7 +39,7 @@ public class Paint extends JFrame implements MouseListener,
 
 	private JPanel eastPanel; // right part of the window reserved for buttons
 
-	private Color currentColor = Color.BLACK; // default color
+	private Color currentColor = Color.BLACK; // default color of the pencil
 
 	public Paint(String string) // constructor
 
@@ -58,8 +58,8 @@ public class Paint extends JFrame implements MouseListener,
 		JMenuBar menuBar = new JMenuBar(); // main menu bar
 
 		getContentPane().add(menuBar, BorderLayout.NORTH); // adds menu bar to
-															// the top of the
-															// panel
+		// the top of the
+		// panel
 
 		JMenu fileMenu = new JMenu("File"); // menus
 		JMenu helpMenu = new JMenu("Help");
@@ -68,7 +68,7 @@ public class Paint extends JFrame implements MouseListener,
 		 * @author Adna Kolakovic
 		 * 
 		 */
-		
+
 		JButton bblack = new JButton("Black"); // Buttons for selecting colors
 		JButton cred = new JButton("Red");
 		JButton white = new JButton("White");
@@ -84,8 +84,8 @@ public class Paint extends JFrame implements MouseListener,
 		 * @author Mirzeta Hankic
 		 * 
 		 */
-		
-		
+
+
 		JMenuItem newItem = new JMenuItem("New"); // Buttons inside menus
 		JMenuItem exitItem = new JMenuItem("Exit");
 		JMenuItem OpenItem = new JMenuItem("Open");
@@ -93,13 +93,13 @@ public class Paint extends JFrame implements MouseListener,
 		JMenuItem Save_as = new JMenuItem("Save_as");
 		JMenuItem Print_Preview = new JMenuItem("Print_Preview");
 		JMenuItem helpItem = new JMenuItem("About");
-		
-		
+
+
 		/**
 		 * @author Mirzeta Hankic and Adna Kolakovic
 		 * 
 		 */		
-		
+
 		JButton clearButton = new JButton("Clear"); // Options, stamps, buttons on the left side
 		JButton MyLine = new JButton("Line");
 		JButton MyRect = new JButton("Rectangle");
@@ -109,7 +109,7 @@ public class Paint extends JFrame implements MouseListener,
 		JButton MyPoly = new JButton("Polygon");
 		JButton Circles = new JButton("Circles");
 		JButton MyOval = new JButton("Circle");
-		
+
 		cyellow.addActionListener(this); // button's action listeners for mouse click
 		white.addActionListener(this);
 		cgreen.addActionListener(this);
@@ -140,7 +140,7 @@ public class Paint extends JFrame implements MouseListener,
 		 * @author Mirzeta Hankic
 		 * 
 		 */
-		
+
 		fileMenu.add(newItem);
 		fileMenu.add(OpenItem);
 		fileMenu.add(SaveItem);
@@ -154,12 +154,12 @@ public class Paint extends JFrame implements MouseListener,
 
 		menuBar.add(helpMenu);
 
-		
+
 		/**
 		 * @author Mirzeta Hankic and Adna Kolakovic
 		 * 
 		 */
-		
+
 		westPanel = new JPanel(); // buttons on the left
 
 		westPanel.setLayout(new GridLayout(9, 2)); // buttons arrangement
@@ -195,8 +195,8 @@ public class Paint extends JFrame implements MouseListener,
 	}
 
 	public void actionPerformed(ActionEvent ae) // method tracks which action is
-												// performed - if a button is
-												// clicked it does an action
+	// performed - if a button is
+	// clicked it does an action
 	{
 
 		String actionCommand = ae.getActionCommand();
@@ -282,37 +282,37 @@ public class Paint extends JFrame implements MouseListener,
 	public void OpenItem() {
 		JOptionPane.showMessageDialog(this, "This is example of good project"
 
-		);
+				);
 
 	}
 
 	public void SaveItem() {
 		JOptionPane.showMessageDialog(this, "This is example of good project"
 
-		);
+				);
 
 	}
 
 	public void Save_as() {
 		JOptionPane.showMessageDialog(this, "This is example of good project"
 
-		);
+				);
 
 	}
 
 	public void Print_Preview() {
 		JOptionPane.showMessageDialog(this, "This is example of good project"
 
-		);
+				);
 
 	}
 
-	
+
 	/**
 	 * @author Adna Kolakovic
 	 * 
 	 */
-	
+
 	public void MyLine() // draws a line
 	{
 		Graphics g = getGraphics();
@@ -320,9 +320,9 @@ public class Paint extends JFrame implements MouseListener,
 		coordinatesx = Integer.parseInt ( corx );
 		String cory = JOptionPane.showInputDialog ("Input coordinate y");
 		coordinatesy = Integer.parseInt ( cory );
-		String valx = JOptionPane.showInputDialog ("Input value x");
+		String valx = JOptionPane.showInputDialog ("Input height");
 		valuex = Integer.parseInt ( valx );
-		String valy = JOptionPane.showInputDialog ("Input value y");
+		String valy = JOptionPane.showInputDialog ("Input width");
 		valuey = Integer.parseInt ( valy );	
 		g.setColor(currentColor);
 		g.drawLine(coordinatesx, coordinatesy, valuex, valuey);
@@ -337,9 +337,9 @@ public class Paint extends JFrame implements MouseListener,
 		coordinatesx = Integer.parseInt ( corx );
 		String cory = JOptionPane.showInputDialog ("Input coordinate y");
 		coordinatesy = Integer.parseInt ( cory );
-		String valx = JOptionPane.showInputDialog ("Input value x");
+		String valx = JOptionPane.showInputDialog ("Input height");
 		valuex = Integer.parseInt ( valx );
-		String valy = JOptionPane.showInputDialog ("Input value y");
+		String valy = JOptionPane.showInputDialog ("Input width");
 		valuey = Integer.parseInt ( valy );	
 		g.setColor(currentColor);
 		g.fillRect(coordinatesx, coordinatesy, valuex, valuey);
@@ -350,15 +350,15 @@ public class Paint extends JFrame implements MouseListener,
 
 	public void MyOval() // draws an oval with the previously set coordinates
 	{
-		
+
 		Graphics g = getGraphics();
 		String corx = JOptionPane.showInputDialog ("Input coordinate x");
 		coordinatesx = Integer.parseInt ( corx );
 		String cory = JOptionPane.showInputDialog ("Input coordinate y");
 		coordinatesy = Integer.parseInt ( cory );
-		String valx = JOptionPane.showInputDialog ("Input value x");
+		String valx = JOptionPane.showInputDialog ("Input height");
 		valuex = Integer.parseInt ( valx );
-		String valy = JOptionPane.showInputDialog ("Input value y");
+		String valy = JOptionPane.showInputDialog ("Input width");
 		valuey = Integer.parseInt ( valy );	
 		g.setColor(currentColor);
 		g.drawOval(coordinatesx, coordinatesy, valuex, valuey);
@@ -373,9 +373,9 @@ public class Paint extends JFrame implements MouseListener,
 		coordinatesx = Integer.parseInt ( corx );
 		String cory = JOptionPane.showInputDialog ("Input coordinate y");
 		coordinatesy = Integer.parseInt ( cory );
-		String valx = JOptionPane.showInputDialog ("Input value x");
+		String valx = JOptionPane.showInputDialog ("Input height");
 		valuex = Integer.parseInt ( valx );
-		String valy = JOptionPane.showInputDialog ("Input value y");
+		String valy = JOptionPane.showInputDialog ("Input width");
 		valuey = Integer.parseInt ( valy );	
 		g.setColor(currentColor);
 		g.drawRect(coordinatesx, coordinatesy, valuex, valuey);
@@ -386,8 +386,8 @@ public class Paint extends JFrame implements MouseListener,
 	 * @author Mirzeta Hankic
 	 * 
 	 */
-	
-	
+
+
 	public void Lamp() // draws a lamp with the previously set coordinates
 	{
 		Graphics g = getGraphics();
@@ -412,18 +412,18 @@ public class Paint extends JFrame implements MouseListener,
 	 * @author Adna Kolakovic
 	 * 
 	 */
-	
+
 	public void RoundRect() // draws a filled rounded rectangle with the 
-							// previously set coordinates
+	// previously set coordinates
 	{
 		Graphics g = getGraphics();
 		String corx = JOptionPane.showInputDialog ("Input coordinate x");
 		coordinatesx = Integer.parseInt ( corx );
 		String cory = JOptionPane.showInputDialog ("Input coordinate y");
 		coordinatesy = Integer.parseInt ( cory );
-		String valx = JOptionPane.showInputDialog ("Input value x");
+		String valx = JOptionPane.showInputDialog ("Input height");
 		valuex = Integer.parseInt ( valx );
-		String valy = JOptionPane.showInputDialog ("Input value y");
+		String valy = JOptionPane.showInputDialog ("Input width");
 		valuey = Integer.parseInt ( valy );	
 		String round = JOptionPane.showInputDialog ("Amount of rounding the edge:");
 		int roundededge = Integer.parseInt ( round );	
@@ -445,7 +445,7 @@ public class Paint extends JFrame implements MouseListener,
 	}
 
 	public void Circles() { // draws a bunch of circles with the 
-							// previously set coordinates
+		// previously set coordinates
 
 		Graphics g = getGraphics();
 		super.paintComponents(g);
@@ -469,7 +469,7 @@ public class Paint extends JFrame implements MouseListener,
 
 		JOptionPane.showMessageDialog(this, "This is example of good project"
 
-		);
+				);
 
 	}
 
@@ -491,7 +491,7 @@ public class Paint extends JFrame implements MouseListener,
 	}
 
 	public void mousePressed(MouseEvent evt) // get coordinates of the point
-												// where the mouse was last
+	// where the mouse was last
 	{											// pressed
 		last_x = evt.getX();
 		last_y = evt.getY();
@@ -514,7 +514,7 @@ public class Paint extends JFrame implements MouseListener,
 	}
 
 	public void mouseClicked(MouseEvent evt) {
-		
+
 	}
 
 	public void mouseReleased(MouseEvent evt) {

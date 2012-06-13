@@ -9,8 +9,14 @@ import java.awt.Graphics;
 
 public class MyRect {
 
+	int x;
+	int y;
+	int h;
+	int w;
+	
+	
 	public void paint(Graphics g) {
-		g.drawRect(300, 300, 95, 95);
+		g.drawRect(x, y, h, w);
 
 	}
 

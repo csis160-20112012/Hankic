@@ -9,6 +9,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class MyRRect {
+	
+	int x;
+	int y;
+	int h;
+	int w;
+	
+	
 	public void paint(Graphics g) {
 		g.setColor(Color.yellow);
 		g.fillRect(350, 350, 100, 100);

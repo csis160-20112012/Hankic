@@ -8,11 +8,15 @@ package paint;
 import java.awt.Graphics;
 
 public class MyLine {
+	
+	int x;
+	int y;
+	int h;
+	int w;
 
 	public void paint(Graphics g) {
-		g.drawLine(400, 400, 95, 95);
-		g.drawLine(0, 0, 90, 50);
-
+		g.drawLine(x, y, h, w);
+		
 	}
 
 }
